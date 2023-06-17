@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+colorama = "*"
+geopy = "*"
+tabulate = "*"
+pytz = "*"
+pillow = "*"
+tweepy = "*"
+"pushbullet.py" = "*"
+discord-webhook = "*"
+selenium = "*"
+opensky-api = {editable = true, git = "https://github.com/openskynetwork/opensky-api.git", subdirectory = "python"}
+webdriver-manager = "*"
+shapely = "*"
+pycairo = "*"
+geog = "*"
+py-staticmaps = "*"
+pyproj = "*"
+pandas = "*"
+lxml = "*"
+beautifulsoup4 = "*"
+python-telegram-bot = "*"
+configparser = "*"
+[requires]
+python_version = "3.9"
