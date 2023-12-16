@@ -1,0 +1,64 @@
+[DATA]
+#Source to pull data from
+#SHOULD BE ADSBX which is ADS-B Exchange or OPENS which is OpenSky
+#By default configured with OpenSky which anyone can use without a login
+#ADS-B Exchange has better data but is not avalible unless you feed their network or pay.
+SOURCE = RpdADSBX
+#Default amount of time after data loss to trigger a landing when under 10k ft
+DATA_LOSS_MINS = 5
+#Failover from one source to the other, only enable if you have both sources setup.
+FAILOVER = FALSE
+#Timezone if you want your own time to show in the console, if invalid will be set to UTC.
+#List of TZs names https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+TZ = UTC
+
+#ADS-B Exchange https://www.adsbexchange.com/data/
+[ADSBX]
+API_KEY = apikey
+API_VERSION = 1
+
+#ADSBX API Proxy, https://gitlab.com/jjwiseman/adsbx-api-proxy, v2 input, v1 or v2 output from proxy
+ENABLE_PROXY = FALSE
+#Full URL http://host:port
+PROXY_HOST =
+
+#OpenSky https://opensky-network.org/apidoc/index.html
+#When using without your own login user and pass should be None
+[OPENSKY]
+USERNAME = None
+PASSWORD = None
+
+#ADS-B Exchange on RapidAPI https://rapidapi.com/adsbx/api/adsbexchange-com1/
+[RpdADSBX]
+API_KEY = none
+API_VERSION = 2
+
+#Define the delay interval in seconds between each data request. This is usefull if you have limited requests in the API.
+[SLEEP]
+SLEEPSEC = 60
+
+[GOOGLE]
+#API KEY for Google Static Maps only if you using this on any of the planes.
+API_KEY = googleapikey
+
+#Used for failover messages and program exits notifcation
+[DISCORD]
+ENABLE = FALSE
+USERNAME = usernamehere
+URL = webhookurl
+ROLE_ID = 
+
+[TFRS]
+URL = http://127.0.0.1:5000/detailed_all
+ENABLE = False
+
+[TWITTER]
+#GLOBAL TWITTER CONSUMER KEY AND CONSUMERS SECRET ONLY NEED TO BE HERE NOW
+ENABLE = False
+CONSUMER_KEY = ck
+CONSUMER_SECRET = cs
+
+[MAP]
+#Map to create from Google Static Maps or screenshot global tar1090 from globe.adsbexchange.com
+#Enter GOOGLESTATICMAP or ADSBX
+OPTION = ADSBX
